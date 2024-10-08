@@ -1,12 +1,14 @@
 // Sam Byers - 2024
 // JAVA Solitaire Game
 // This main class is the main driver for the game. All game logic is handled here.
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        ScoreSystem score = new ScoreSystem(); // ScoreSystem object to handle the scoring of the game
         Card heldCard; // The card that is currently being held by the player
         var deck = new Deck(); // The main deck that cards are drawn from
         var bufferDeck = new Deck(); // A temporary deck to store cards that are being moved as a stack
@@ -20,7 +22,7 @@ public class Main {
         UserInputScanner uInput = new UserInputScanner(); // UserInputScanner object to handle user input
         String displayRowString; // String to store the row of cards to display
         String sourceString = ""; // String to store the source of the card being moved, so that they can be placed back if the move is invalid
-        String [] moveInput; // Array to store the user input, source, destination, number of cards
+        String[] moveInput; // Array to store the user input, source, destination, number of cards
         int indxVal; // Integer to store the index of the card to grab the stack from when moving a stack of cards
 
         ArrayList<TableDeck> tableDecks = new ArrayList<>(); // Array list to store the table decks, the 7 decks where cards are moved to and from when playing the game
@@ -28,15 +30,15 @@ public class Main {
         deck.defineCards(); // Define the cards in the deck, 52 cards in total are defined here in deck
         deck.shuffleDeck(); // Shuffle the deck so that the cards are in a random order
         for (int i = 0; i < 7; i++) { // Loop to create the 7 table decks
-            tableDecks.add(new TableDeck()); 
+            tableDecks.add(new TableDeck());
             tableDecks.get(i).initalFill(i + 1, deck); // Fill the table decks with the appropriate number of cards from the main deck
         }
 
-        while (true) { // Main game loop starts here, this code runs until the game is quit
+        while (spadeBuild.getDeckSize() + clubBuild.getDeckSize() + heartBuild.getDeckSize() + diamondBuild.getDeckSize() != 52) { // Main game loop starts here, this code runs until the game is quit or won
             for (TableDeck tableDeck : tableDecks) { // Loop through the table decks at the start of a turn
                 tableDeck.revealCardCheck(); // Reveal the top card of the deck and check if there is a stack of cards
             }
-
+            System.out.println("\n Time elapsed: " + score.elapedTime() + " Score: " + score.getScore() + "\n"); // Print the time elapsed since the game started
             System.out.println("\n\n-DECK-|-SPADE-|-CLUB-|-HEART|-DIAM|  "); // Print an interface element to show the player where the build decks are
             for (int i = 0; i < 3; i++) { // 3 lines to print a top card for the decks that print in top card mode
 
@@ -53,16 +55,16 @@ public class Main {
             System.out.println("DISCARD|--A--||--B--||--C--||--D--||--E--||--F--||--G--|"); // Print an interface element to show the player where the table decks are
             for (int i = 0; i < 72; i++) { // Loop to print the table decks, this game supports up to 24 cards in a given row
                 displayRowString = ""; // String to store the row of cards to display is set to empty
-                if(discardPile.deck.size() < 3) { // If the discard pile has less than 3 cards
+                if (discardPile.deck.size() < 3) { // If the discard pile has less than 3 cards
                     displayRowString += discardPile.printDeck(i); // We can print the discard pile as normal
                 } else { // If the discard pile has more than 3 cards
                     discardPileBuffer.deck.clear(); // Clear the discard pile buffer
-                    discardPileBuffer.addCard(discardPile.deck.get(discardPile.deck.size()-3)); // Add the 3rd last card to the buffer
-                    discardPileBuffer.addCard(discardPile.deck.get(discardPile.deck.size()-2)); // Add the 2nd last card to the buffer
-                    discardPileBuffer.addCard(discardPile.deck.get(discardPile.deck.size()-1)); // Add the last card to the buffer
+                    discardPileBuffer.addCard(discardPile.deck.get(discardPile.deck.size() - 3)); // Add the 3rd last card to the buffer
+                    discardPileBuffer.addCard(discardPile.deck.get(discardPile.deck.size() - 2)); // Add the 2nd last card to the buffer
+                    discardPileBuffer.addCard(discardPile.deck.get(discardPile.deck.size() - 1)); // Add the last card to the buffer
                     displayRowString += discardPileBuffer.printDeck(i); // Print the buffer instead of the discard pile
                 }
-                
+
                 for (int j = 0; j < 7; j++) { // Loop through the table decks
                     displayRowString += tableDecks.get(j).printDeck(i); // Print the line from each of the table decks
                 }
@@ -80,11 +82,14 @@ public class Main {
             }
             switch (moveInput[0]) { // Switch statement to handle the user inputs first term, the source of the card to move
                 case "q" -> { // If the user input is 'q', quit the game
-                    System.out.println("Quitting game.");
+                    System.out.println("You quit! Goodbye!"); // Print a quit message
+                    System.out.println("Final Score: " + score.getScore()); // Print the final score
+                    System.out.println("Cards left: " + (52-(spadeBuild.getDeckSize() + clubBuild.getDeckSize() + heartBuild.getDeckSize() + diamondBuild.getDeckSize()))); // Print the number of cards left
+                    System.out.println("Time Spent: " + score.elapedTime()); // Print the time spent
                     return;
                 }
                 case "de" -> { // If the user input is 'de', draw 3 cards from the deck
-                    if(deck.deck.isEmpty()){ // If the deck is empty
+                    if (deck.deck.isEmpty()) { // If the deck is empty
                         deck.refillDeck(discardPile); // Refill the deck from the discard pile
                         discardPile.deck.clear(); // Clear the discard pile
                     } else { // If the deck is not empty
@@ -98,7 +103,7 @@ public class Main {
                 }
                 case "a" -> { // If the user input is 'a', take the top card from table deck A
                     if (tableDecks.get(0).hasStack) { // If table deck A has a stack of cards
-                        if (moveInput[2].equals("Choose")){ // If the user input is 'Choose', ie the user has not specifed the number of cards to move, prompt the user to choose the number of cards
+                        if (moveInput[2].equals("Choose")) { // If the user input is 'Choose', ie the user has not specifed the number of cards to move, prompt the user to choose the number of cards
                             indxVal = uInput.pickIndex(scanner, tableDecks.get(0)); // Get the index of the card to grab the stack from, from the user
                             if (indxVal == -1) { // If the index is -1, the user has cancelled the move or entered an invalid index
                                 break;  // Break out of the switch statement
@@ -124,9 +129,9 @@ public class Main {
                     sourceString = "Table A"; // Set the source string to 'Table A'
                 }
                 // This code is repeated for each of the table decks, A-G
-                case "b" -> { 
+                case "b" -> {
                     if (tableDecks.get(1).hasStack) {
-                        if (moveInput[2].equals("Choose")){
+                        if (moveInput[2].equals("Choose")) {
                             indxVal = uInput.pickIndex(scanner, tableDecks.get(1));
                             if (indxVal == -1) {
                                 break;
@@ -153,7 +158,7 @@ public class Main {
                 }
                 case "c" -> {
                     if (tableDecks.get(2).hasStack) {
-                        if (moveInput[2].equals("Choose")){
+                        if (moveInput[2].equals("Choose")) {
                             indxVal = uInput.pickIndex(scanner, tableDecks.get(2));
                             if (indxVal == -1) {
                                 break;
@@ -180,7 +185,7 @@ public class Main {
                 }
                 case "d" -> {
                     if (tableDecks.get(3).hasStack) {
-                        if (moveInput[2].equals("Choose")){
+                        if (moveInput[2].equals("Choose")) {
                             indxVal = uInput.pickIndex(scanner, tableDecks.get(3));
                             if (indxVal == -1) {
                                 break;
@@ -207,7 +212,7 @@ public class Main {
                 }
                 case "e" -> {
                     if (tableDecks.get(4).hasStack) {
-                        if (moveInput[2].equals("Choose")){
+                        if (moveInput[2].equals("Choose")) {
                             indxVal = uInput.pickIndex(scanner, tableDecks.get(4));
                             if (indxVal == -1) {
                                 break;
@@ -226,7 +231,7 @@ public class Main {
                         } else {
                             heldCard = null;
                         }
-                        
+
                     } else {
                         heldCard = tableDecks.get(4).takeCard();
                         bufferDeck.deck.clear();
@@ -235,7 +240,7 @@ public class Main {
                 }
                 case "f" -> {
                     if (tableDecks.get(5).hasStack) {
-                        if (moveInput[2].equals("Choose")){
+                        if (moveInput[2].equals("Choose")) {
                             indxVal = uInput.pickIndex(scanner, tableDecks.get(5));
                             if (indxVal == -1) {
                                 break;
@@ -262,7 +267,7 @@ public class Main {
                 }
                 case "g" -> {
                     if (tableDecks.get(6).hasStack) {
-                        if (moveInput[2].equals("Choose")){
+                        if (moveInput[2].equals("Choose")) {
                             indxVal = uInput.pickIndex(scanner, tableDecks.get(6));
                             if (indxVal == -1) {
                                 break;
@@ -316,6 +321,12 @@ public class Main {
                                 case "Table G" -> // If the source is table deck G 
                                     tableDecks.get(6).addCard(heldCard); // Add the card back to table deck G
                             }
+                        } else {
+                            if (sourceString.equals("Discard")) { // If the source is the discard pile
+                                score.scoreFromDiscard(); // Score the move from the discard pile
+                            } else {
+                                score.scoreFromTable(); // Score the move from a table deck
+                            }
                         }
                     }
                     case "diam" -> { // If the user input is 'diam', move the card to the diamond build deck
@@ -339,6 +350,12 @@ public class Main {
                                     tableDecks.get(5).addCard(heldCard);
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
+                            }
+                        } else {
+                            if (sourceString.equals("Discard")) { // If the source is the discard pile
+                                score.scoreFromDiscard(); // Score the move from the discard pile
+                            } else {
+                                score.scoreFromTable(); // Score the move from a table deck
                             }
                         }
                     }
@@ -365,6 +382,12 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            if (sourceString.equals("Discard")) { // If the source is the discard pile
+                                score.scoreFromDiscard(); // Score the move from the discard pile
+                            } else {
+                                score.scoreFromTable(); // Score the move from a table deck
+                            }
                         }
                     }
                     case "club" -> {
@@ -388,6 +411,12 @@ public class Main {
                                     tableDecks.get(5).addCard(heldCard);
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
+                            }
+                        } else {
+                            if (sourceString.equals("Discard")) { // If the source is the discard pile
+                                score.scoreFromDiscard(); // Score the move from the discard pile
+                            } else {
+                                score.scoreFromTable(); // Score the move from a table deck
                             }
                         }
                     }
@@ -413,6 +442,8 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            score.toTableScore(); // Score the move to a table deck
                         }
                     }
                     case "b" -> {
@@ -437,6 +468,8 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            score.toTableScore(); // Score the move to a table deck
                         }
                     }
                     case "c" -> {
@@ -461,6 +494,8 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            score.toTableScore(); // Score the move to a table deck
                         }
                     }
                     case "d" -> {
@@ -485,6 +520,8 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            score.toTableScore(); // Score the move to a table deck
                         }
                     }
                     case "e" -> {
@@ -509,6 +546,8 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            score.toTableScore(); // Score the move to a table deck
                         }
                     }
                     case "f" -> {
@@ -533,6 +572,8 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            score.toTableScore(); // Score the move to a table deck
                         }
                     }
                     case "g" -> {
@@ -557,10 +598,12 @@ public class Main {
                                 case "Table G" ->
                                     tableDecks.get(6).addCard(heldCard);
                             }
+                        } else {
+                            score.toTableScore(); // Score the move to a table deck
                         }
                     }
                     default -> { // If the user input is not valid, we print an error message and return the card to the source as before
-                        switch (sourceString) { 
+                        switch (sourceString) {
                             case "Discard" ->
                                 discardPile.addCard(heldCard);
                             case "Table A" ->
@@ -578,18 +621,21 @@ public class Main {
                             case "Table G" ->
                                 tableDecks.get(6).addCard(heldCard);
                         }
-                        System.out.println("Invalid input"); 
+                        System.out.println("Invalid input");
                     }
-                        
+
                 }
-            } else if(!bufferDeck.deck.isEmpty() & heldCard == null) { // If the buffer deck is not empty and the held card is null, we are moving a stack of cards
+            } else if (!bufferDeck.deck.isEmpty() & heldCard == null) { // If the buffer deck is not empty and the held card is null, we are moving a stack of cards
+                System.out.println("Held stack: " + bufferDeck.deck.getFirst().getRank() + bufferDeck.deck.getFirst().getSuit() + " to " + bufferDeck.deck.getLast().getRank() + bufferDeck.deck.getLast().getSuit()); // Print the stack of cards
+                score.setMultipleBuffer(bufferDeck.deck.size()); // Set the score multiplier to the number of cards in the stack
                 switch (moveInput[1]) { // Switch statement to handle the user inputs second term, the destination of the card we are moving as before
                     case "a" -> { // If the user input is 'a', move the stack of cards to table deck A, we need not need check if the cards are being moved to a build deck as stacks of cards cannot be moved to build decks
                         bufferDeck = tableDecks.get(0).placeStack(bufferDeck); // Place the stack of cards in table deck A
                         if (!bufferDeck.deck.isEmpty()) { // If the stack of cards is not placed in table deck A, ie the move is invalid
                             System.out.println("Invalid move. Card not placed in Table A."); // Print an error message
+                            score.clearMultipleBuffer(); // Clear the score multiplier as the move was invalid
                             switch (sourceString) { // Switch statement to handle the source of the card we are moving, same as before
-                                case "Table A" ->{ // If the source is table deck A
+                                case "Table A" -> { // If the source is table deck A
                                     tableDecks.get(0).addCard(bufferDeck.deck.getFirst()); // Add the first card of the stack back to table deck A, this is done to force the place stack to work correctly as otherwise it would check the face down card below where the stack was taken from
                                     bufferDeck.deck.removeFirst(); // Remove the first card from the stack
                                     tableDecks.get(0).placeStack(bufferDeck); // Place the stack of cards back in table deck A, which will now succeed given that the stack was valid before
@@ -605,7 +651,7 @@ public class Main {
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(2).placeStack(bufferDeck);
                                 }
-                                case "Table D" ->{
+                                case "Table D" -> {
                                     tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(3).placeStack(bufferDeck);
@@ -626,6 +672,8 @@ public class Main {
                                     tableDecks.get(6).placeStack(bufferDeck);
                                 }
                             }
+                        } else { // If the stack of cards is placed in table deck A
+                            score.scoreFromTableMultiple(); // Score the move from a table deck
                         }
                     }
                     // and again, this code is repeated for each of the table decks, A-G
@@ -633,8 +681,9 @@ public class Main {
                         bufferDeck = tableDecks.get(1).placeStack(bufferDeck);
                         if (!bufferDeck.deck.isEmpty()) {
                             System.out.println("Invalid move. Card not placed in Table B.");
+                            score.clearMultipleBuffer();
                             switch (sourceString) {
-                                case "Table A" ->{
+                                case "Table A" -> {
                                     tableDecks.get(0).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(0).placeStack(bufferDeck);
@@ -649,7 +698,7 @@ public class Main {
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(2).placeStack(bufferDeck);
                                 }
-                                case "Table D" ->{
+                                case "Table D" -> {
                                     tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(3).placeStack(bufferDeck);
@@ -670,15 +719,18 @@ public class Main {
                                     tableDecks.get(6).placeStack(bufferDeck);
                                 }
                             }
+                        } else {
+                            score.scoreFromTableMultiple();
                         }
-                        
+
                     }
                     case "c" -> {
                         bufferDeck = tableDecks.get(2).placeStack(bufferDeck);
                         if (!bufferDeck.deck.isEmpty()) {
                             System.out.println("Invalid move. Card not placed in Table C.");
+                            score.clearMultipleBuffer();
                             switch (sourceString) {
-                                case "Table A" ->{
+                                case "Table A" -> {
                                     tableDecks.get(0).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(0).placeStack(bufferDeck);
@@ -693,7 +745,7 @@ public class Main {
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(2).placeStack(bufferDeck);
                                 }
-                                case "Table D" ->{
+                                case "Table D" -> {
                                     tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(3).placeStack(bufferDeck);
@@ -714,16 +766,18 @@ public class Main {
                                     tableDecks.get(6).placeStack(bufferDeck);
                                 }
                             }
+                        } else {
+                            score.scoreFromTableMultiple();
                         }
 
-                        
                     }
                     case "d" -> {
                         bufferDeck = tableDecks.get(3).placeStack(bufferDeck);
                         if (!bufferDeck.deck.isEmpty()) {
                             System.out.println("Invalid move. Card not placed in Table D.");
+                            score.clearMultipleBuffer();
                             switch (sourceString) {
-                                case "Table A" ->{
+                                case "Table A" -> {
                                     tableDecks.get(0).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(0).placeStack(bufferDeck);
@@ -738,7 +792,7 @@ public class Main {
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(2).placeStack(bufferDeck);
                                 }
-                                case "Table D" ->{
+                                case "Table D" -> {
                                     tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(3).placeStack(bufferDeck);
@@ -759,15 +813,18 @@ public class Main {
                                     tableDecks.get(6).placeStack(bufferDeck);
                                 }
                             }
+                        } else {
+                            score.scoreFromTableMultiple();
                         }
-                        
+
                     }
                     case "e" -> {
                         bufferDeck = tableDecks.get(4).placeStack(bufferDeck);
                         if (!bufferDeck.deck.isEmpty()) {
                             System.out.println("Invalid move. Card not placed in Table E.");
+                            score.clearMultipleBuffer();
                             switch (sourceString) {
-                                case "Table A" ->{
+                                case "Table A" -> {
                                     tableDecks.get(0).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(0).placeStack(bufferDeck);
@@ -782,7 +839,7 @@ public class Main {
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(2).placeStack(bufferDeck);
                                 }
-                                case "Table D" ->{
+                                case "Table D" -> {
                                     tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(3).placeStack(bufferDeck);
@@ -803,15 +860,18 @@ public class Main {
                                     tableDecks.get(6).placeStack(bufferDeck);
                                 }
                             }
+                        } else {
+                            score.scoreFromTableMultiple();
                         }
-                        
+
                     }
                     case "f" -> {
                         bufferDeck = tableDecks.get(5).placeStack(bufferDeck);
                         if (!bufferDeck.deck.isEmpty()) {
                             System.out.println("Invalid move. Card not placed in Table F.");
+                            score.clearMultipleBuffer();
                             switch (sourceString) {
-                                case "Table A" ->{
+                                case "Table A" -> {
                                     tableDecks.get(0).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(0).placeStack(bufferDeck);
@@ -826,7 +886,7 @@ public class Main {
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(2).placeStack(bufferDeck);
                                 }
-                                case "Table D" ->{
+                                case "Table D" -> {
                                     tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(3).placeStack(bufferDeck);
@@ -847,15 +907,18 @@ public class Main {
                                     tableDecks.get(6).placeStack(bufferDeck);
                                 }
                             }
+                        } else {
+                            score.scoreFromTableMultiple();
                         }
-                        
+
                     }
                     case "g" -> {
                         bufferDeck = tableDecks.get(6).placeStack(bufferDeck);
                         if (!bufferDeck.deck.isEmpty()) {
                             System.out.println("Invalid move. Card not placed in Table G.");
+                            score.clearMultipleBuffer();
                             switch (sourceString) {
-                                case "Table A" ->{
+                                case "Table A" -> {
                                     tableDecks.get(0).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(0).placeStack(bufferDeck);
@@ -870,7 +933,7 @@ public class Main {
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(2).placeStack(bufferDeck);
                                 }
-                                case "Table D" ->{
+                                case "Table D" -> {
                                     tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                     bufferDeck.deck.removeFirst();
                                     tableDecks.get(3).placeStack(bufferDeck);
@@ -891,12 +954,15 @@ public class Main {
                                     tableDecks.get(6).placeStack(bufferDeck);
                                 }
                             }
+                        } else {
+                            score.scoreFromTableMultiple();
                         }
-                        
+
                     }
                     default -> { // If the user input is not valid, we print an error message and return the stack of cards to the source as before
+                        score.clearMultipleBuffer(); // Clear the score multiplier as the move was invalid
                         switch (sourceString) {
-                            case "Table A" ->{
+                            case "Table A" -> {
                                 tableDecks.get(0).addCard(bufferDeck.deck.getFirst());
                                 bufferDeck.deck.removeFirst();
                                 tableDecks.get(0).placeStack(bufferDeck);
@@ -911,7 +977,7 @@ public class Main {
                                 bufferDeck.deck.removeFirst();
                                 tableDecks.get(2).placeStack(bufferDeck);
                             }
-                            case "Table D" ->{
+                            case "Table D" -> {
                                 tableDecks.get(3).addCard(bufferDeck.deck.getFirst());
                                 bufferDeck.deck.removeFirst();
                                 tableDecks.get(3).placeStack(bufferDeck);
@@ -935,10 +1001,14 @@ public class Main {
                         System.out.println("Invalid input");
                     }
                 }
-            }
-            else { // if the held card is null, we have just drawn 3 cards to the discard pile and thus are not holding anything
+            } else { // if the held card is null, we have just drawn 3 cards to the discard pile and thus are not holding anything
                 System.out.println("Held card: None"); // Print that we are not holding anything
             }
+        }
+        if (spadeBuild.getDeckSize() + clubBuild.getDeckSize() + heartBuild.getDeckSize() + diamondBuild.getDeckSize() == 52) { // If all the build decks are full, the game is won
+            System.out.println("You win!"); // Print a win message
+            System.out.println("Score: " + score.getScore()); // Print the final score
+            System.out.println("Time Spent: " + score.elapedTime()); // Print the time spent
         }
     }
 }
