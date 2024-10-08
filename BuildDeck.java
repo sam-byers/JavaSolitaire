@@ -1,44 +1,62 @@
+
+/**
+ * The BuildDeck class extends the Deck class and represents one of the 4 'build' decks that the player can place cards on.
+ */
 public class BuildDeck extends Deck {
 
+    // String to store the suit of the build deck
     String assosiatedSuit;
 
-    public BuildDeck(String suite) { // Constructor for BuildDeck class
+    /**
+     * Constructor for the BuildDeck class.
+     *
+     * @param suite The suit associated with the deck.
+     */
+    public BuildDeck(String suite) {
         super();
         this.assosiatedSuit = suite;
     }
 
+    /**
+     * Plays a card into the deck if it matches the associated suit and follows
+     * the correct rank order.
+     *
+     * @param cardIn The card to be played.
+     * @return The card played, or null if the card was successfully added to
+     * the deck.
+     */
     public Card playCard(Card cardIn) {
         String currentRank;
         if (this.deck.isEmpty()) {
-            currentRank = "EMPTY";
+            currentRank = "EMPTY"; // If the deck is empty, the current rank is set to "EMPTY"
         } else {
-            currentRank = this.deck.getLast().getRank();
+            currentRank = this.deck.getLast().getRank(); // Otherwise, the current rank is set to the rank of the last card in the deck
         }
-        if (cardIn.getSuit().equals(this.assosiatedSuit)) {
-            switch (currentRank) {
+        if (cardIn.getSuit().equals(this.assosiatedSuit)) { // If the card's suit matches the associated suit of the deck
+            switch (currentRank) { // Switch statement to check if the card's rank follows the correct order
                 case "EMPTY" -> {
-                    if (cardIn.getRank().equals(" A")) {
+                    if (cardIn.getRank().equals(" A")) { // If the deck is empty, the card must be an Ace
                         this.deck.add(cardIn);
                         return null;
                     }
                     break;
                 }
                 case " A" -> {
-                    if (cardIn.getRank().equals(" 2")) {
+                    if (cardIn.getRank().equals(" 2")) { // If the current card is an Ace, the next card must be a 2
                         this.deck.add(cardIn);
                         return null;
                     }
                     break;
                 }
                 case " 2" -> {
-                    if (cardIn.getRank().equals(" 3")) {
+                    if (cardIn.getRank().equals(" 3")) { // If the current card is a 2, the next card must be a 3
                         this.deck.add(cardIn);
                         return null;
                     }
                     break;
                 }
                 case " 3" -> {
-                    if (cardIn.getRank().equals(" 4")) {
+                    if (cardIn.getRank().equals(" 4")) { //... and so on
                         this.deck.add(cardIn);
                         return null;
                     }
@@ -108,14 +126,19 @@ public class BuildDeck extends Deck {
                     break;
                 }
                 default -> {
-                    return cardIn;
+                    return cardIn; // If the card does not follow the correct order, the card is returned
                 }
             }
         }
-        return cardIn;
+        return cardIn; // If the card does not match the associated suit, the card is returned
     }
 
-    public int getDeckSize() {
+    /**
+     * Method to get the size of the deck.
+     *
+     * @return The size of the deck.
+     */
+    public int getDeckSize() { // Method to get the size of the deck
         return this.deck.size();
     }
 
