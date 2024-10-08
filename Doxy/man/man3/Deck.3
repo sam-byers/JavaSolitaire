@@ -1,0 +1,119 @@
+.TH "Deck" 3 "Version 1.0" "Java Solitaire Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Deck
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBBuildDeck\fP, \fBDiscardDeck\fP, and \fBTableDeck\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdefineCards\fP ()"
+.br
+.ti -1c
+.RI "void \fBshuffleDeck\fP ()"
+.br
+.ti -1c
+.RI "\fBCard\fP \fBtakeCard\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddCard\fP (\fBCard\fP cardIn)"
+.br
+.ti -1c
+.RI "void \fBrefillDeck\fP (\fBDeck\fP deckIn)"
+.br
+.ti -1c
+.RI "String \fBprintDeck\fP (int line)"
+.br
+.ti -1c
+.RI "String \fBprintTopCard\fP (int line)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBDeck\fP class represents a deck of cards\&. It contains an ArrayList of \fBCard\fP objects and methods to shuffle the deck, take a card from the deck, add a card to the deck, and refill the deck\&. All piles in the game are represented by supers of this class or this class itself\&. 
+.PP
+Definition at line \fB10\fP of file \fBDeck\&.java\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Deck\&.addCard (\fBCard\fP cardIn)"
+Method to add a card to the top of the deck\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcardIn\fP The card to add to the deck\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB55\fP of file \fBDeck\&.java\fP\&.
+.SS "void Deck\&.defineCards ()"
+A constructor for the \fBDeck\fP class that creates a deck with all 52 cards\&. 
+.PP
+Definition at line \fB17\fP of file \fBDeck\&.java\fP\&.
+.SS "String Deck\&.printDeck (int line)"
+Method to print the deck\&. This takes a line number as an argument and returns the string to be printed\&. It prints the cards as nCards*3 lines, which can be selected by the line number\&. Therefore, by calling this method, and indexing the line number a sufficient number of times, the entire deck can be printed\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIline\fP The line number to print\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A string representation of one of the lines making up one of the cards in the deck 
+.RE
+.PP
+
+.PP
+Definition at line \fB85\fP of file \fBDeck\&.java\fP\&.
+.SS "String Deck\&.printTopCard (int line)"
+Method to print the top card of the deck\&. This takes a line number as an argument and returns the string to be printed\&. It prints the top card as 3 lines, which can be selected by the line number\&. This is used to render the top card of the deck in the game for the build piles\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIline\fP The line number to print\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A string representation of one of the lines making up the top card in the deck\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB142\fP of file \fBDeck\&.java\fP\&.
+.SS "void Deck\&.refillDeck (\fBDeck\fP deckIn)"
+Method to refill the deck with the cards from another deck\&. This is used to refill the draw pile from the discard pile\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdeckIn\fP The deck to take the cards from\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBDeck\&.java\fP\&.
+.SS "void Deck\&.shuffleDeck ()"
+Method to shuffle the deck\&. 
+.PP
+Definition at line \fB28\fP of file \fBDeck\&.java\fP\&.
+.SS "\fBCard\fP Deck\&.takeCard ()"
+Method to take the last (top) card from the deck\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The card taken from the deck\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB38\fP of file \fBDeck\&.java\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Java Solitaire Project from the source code\&.

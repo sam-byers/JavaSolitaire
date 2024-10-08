@@ -1,0 +1,137 @@
+.TH "TableDeck" 3 "Version 1.0" "Java Solitaire Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TableDeck
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBDeck\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTableDeck\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitalFill\fP (int nCards, \fBDeck\fP deckIn)"
+.br
+.ti -1c
+.RI "void \fBrevealCardCheck\fP ()"
+.br
+.ti -1c
+.RI "\fBDeck\fP \fBgrabStack\fP (int indx)"
+.br
+.ti -1c
+.RI "\fBDeck\fP \fBplaceStack\fP (\fBDeck\fP stack)"
+.br
+.ti -1c
+.RI "\fBCard\fP \fBplayCard\fP (\fBCard\fP cardIn)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBDeck\fP
+.in +1c
+.ti -1c
+.RI "void \fBdefineCards\fP ()"
+.br
+.ti -1c
+.RI "void \fBshuffleDeck\fP ()"
+.br
+.ti -1c
+.RI "\fBCard\fP \fBtakeCard\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddCard\fP (\fBCard\fP cardIn)"
+.br
+.ti -1c
+.RI "void \fBrefillDeck\fP (\fBDeck\fP deckIn)"
+.br
+.ti -1c
+.RI "String \fBprintDeck\fP (int line)"
+.br
+.ti -1c
+.RI "String \fBprintTopCard\fP (int line)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB2\fP of file \fBTableDeck\&.java\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TableDeck\&.TableDeck ()"
+
+.PP
+Definition at line \fB7\fP of file \fBTableDeck\&.java\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDeck\fP TableDeck\&.grabStack (int indx)"
+Method to grab a stack of cards from the deck\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindx\fP The index of the card to grab the stack from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The stack of cards as a \fBDeck\fP object\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBTableDeck\&.java\fP\&.
+.SS "void TableDeck\&.initalFill (int nCards, \fBDeck\fP deckIn)"
+Method to fill the deck with a number of cards from a deck object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInCards\fP The number of cards to fill the deck with\&. 
+.br
+\fIdeckIn\fP The deck object to take the cards from\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB16\fP of file \fBTableDeck\&.java\fP\&.
+.SS "\fBDeck\fP TableDeck\&.placeStack (\fBDeck\fP stack)"
+Method to place a stack of cards onto the deck\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstack\fP The stack of cards to place\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The stack of cards\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB71\fP of file \fBTableDeck\&.java\fP\&.
+.SS "\fBCard\fP TableDeck\&.playCard (\fBCard\fP cardIn)"
+Method to play a card onto the deck\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcardIn\fP The card to play\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The card played, or null if the card was successfully added to the deck\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB97\fP of file \fBTableDeck\&.java\fP\&.
+.SS "void TableDeck\&.revealCardCheck ()"
+Method to reveal the top card of the deck and check if there is a stack of cards\&. 
+.PP
+Definition at line \fB32\fP of file \fBTableDeck\&.java\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Java Solitaire Project from the source code\&.

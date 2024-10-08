@@ -34,7 +34,7 @@ public class Main {
             tableDecks.get(i).initalFill(i + 1, deck); // Fill the table decks with the appropriate number of cards from the main deck
         }
 
-        while (spadeBuild.getDeckSize() + clubBuild.getDeckSize() + heartBuild.getDeckSize() + diamondBuild.getDeckSize() != 52) { // Main game loop starts here, this code runs until the game is quit or won
+        while (spadeBuild.getDeckSize() + clubBuild.getDeckSize() + heartBuild.getDeckSize() + diamondBuild.getDeckSize() < 52) { // Main game loop starts here, this code runs until the game is quit or won
             for (TableDeck tableDeck : tableDecks) { // Loop through the table decks at the start of a turn
                 tableDeck.revealCardCheck(); // Reveal the top card of the deck and check if there is a stack of cards
             }

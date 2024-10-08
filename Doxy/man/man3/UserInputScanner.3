@@ -1,0 +1,85 @@
+.TH "UserInputScanner" 3 "Version 1.0" "Java Solitaire Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UserInputScanner
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "String[] \fBmakeMove\fP (Scanner scanner)"
+.br
+.ti -1c
+.RI "int \fBpickIndex\fP (Scanner scanner, \fBDeck\fP deck)"
+.br
+.ti -1c
+.RI "int \fBloadIndx\fP (String inxString, \fBDeck\fP deck)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB5\fP of file \fBUserInputScanner\&.java\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int UserInputScanner\&.loadIndx (String inxString, \fBDeck\fP deck)"
+Method to use the previous user input to check and return the index of the card that the user wants to move\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIinxString\fP The user input as a string\&. (Number of cards to move) 
+.br
+\fIdeck\fP The deck object from which the card is to be loaded from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The index of the card to load as an integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB111\fP of file \fBUserInputScanner\&.java\fP\&.
+.SS "String[] UserInputScanner\&.makeMove (Scanner scanner)"
+Method to get the user input for the move\&. The user can input the source stack, destination stack and the number of cards to move\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIscanner\fP The scanner object to get the user input\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The user input as a string array\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB14\fP of file \fBUserInputScanner\&.java\fP\&.
+.SS "int UserInputScanner\&.pickIndex (Scanner scanner, \fBDeck\fP deck)"
+Method to get the user input for the number of cards to move (index)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIscanner\fP The scanner object to get the user input\&. 
+.br
+\fIdeck\fP The deck object from which the cards are to be moved from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of cards to move as an integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBUserInputScanner\&.java\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Java Solitaire Project from the source code\&.

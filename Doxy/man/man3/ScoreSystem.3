@@ -1,0 +1,93 @@
+.TH "ScoreSystem" 3 "Version 1.0" "Java Solitaire Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ScoreSystem
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScoreSystem\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetScore\fP ()"
+.br
+.ti -1c
+.RI "int \fBelapedTime\fP ()"
+.br
+.ti -1c
+.RI "void \fBscoreFromDiscard\fP ()"
+.br
+.ti -1c
+.RI "void \fBscoreFromTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBtoTableScore\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMultipleBuffer\fP (int multiple)"
+.br
+.ti -1c
+.RI "void \fBscoreFromTableMultiple\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearMultipleBuffer\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB2\fP of file \fBScoreSystem\&.java\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ScoreSystem\&.ScoreSystem ()"
+Constructor for the \fBScoreSystem\fP class\&. 
+.PP
+Definition at line \fB10\fP of file \fBScoreSystem\&.java\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ScoreSystem\&.clearMultipleBuffer ()"
+Method to clear the multiple buffer if the move is not sucessful\&. 
+.PP
+Definition at line \fB70\fP of file \fBScoreSystem\&.java\fP\&.
+.SS "int ScoreSystem\&.elapedTime ()"
+Method to return the elapsed time since the start of the game\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The elapsed time in seconds\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB27\fP of file \fBScoreSystem\&.java\fP\&.
+.SS "int ScoreSystem\&.getScore ()"
+Getter to return the score\&. 
+.PP
+Definition at line \fB19\fP of file \fBScoreSystem\&.java\fP\&.
+.SS "void ScoreSystem\&.scoreFromDiscard ()"
+Method to update the score when a card is moved from the discard pile to the build pile\&. 
+.PP
+Definition at line \fB34\fP of file \fBScoreSystem\&.java\fP\&.
+.SS "void ScoreSystem\&.scoreFromTable ()"
+Method to update the score when a card is moved from the table to the build pile\&. 
+.PP
+Definition at line \fB41\fP of file \fBScoreSystem\&.java\fP\&.
+.SS "void ScoreSystem\&.scoreFromTableMultiple ()"
+Method to update the score when multiple cards are moved from the table to table\&. 
+.PP
+Definition at line \fB62\fP of file \fBScoreSystem\&.java\fP\&.
+.SS "void ScoreSystem\&.setMultipleBuffer (int multiple)"
+Method to set the number of cards being moved, which can be used to update the score if sucessful\&. 
+.PP
+Definition at line \fB55\fP of file \fBScoreSystem\&.java\fP\&.
+.SS "void ScoreSystem\&.toTableScore ()"
+Method to update the score when a card is moved from table pile to table pile, or from discard pile to table pile\&. 
+.PP
+Definition at line \fB48\fP of file \fBScoreSystem\&.java\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Java Solitaire Project from the source code\&.
