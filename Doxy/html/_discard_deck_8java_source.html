@@ -101,40 +101,40 @@ $(function(){initNavTree('_discard_deck_8java_source.html',''); initResizable(tr
   <div class="headertitle"><div class="title">DiscardDeck.java</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_discard_deck_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*DiscardDeck class extends Deck and represents the &#39;draw&#39; pile */</span></div>
-<div class="foldopen" id="foldopen00002" data-start="{" data-end="};">
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="class_discard_deck.html">    2</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_discard_deck.html">DiscardDeck</a> <span class="keyword">extends</span> <a class="code hl_class" href="class_deck.html">Deck</a>{</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    </div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_discard_deck.html#a726dc786f614aea7946e334f4ef4758f">    4</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_discard_deck.html#a726dc786f614aea7946e334f4ef4758f">DiscardDeck</a>() { <span class="comment">// Constructor for DiscardDeck class</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>        super();</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    }</div>
+<a href="_discard_deck_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_discard_deck.html">    4</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_discard_deck.html">DiscardDeck</a> <span class="keyword">extends</span> <a class="code hl_class" href="class_deck.html">Deck</a>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_discard_deck.html#a726dc786f614aea7946e334f4ef4758f">    9</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_discard_deck.html#a726dc786f614aea7946e334f4ef4758f">DiscardDeck</a>() {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        super();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
 </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_discard_deck.html#a94fef982f79950a2a43e732390bfc813">   12</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_discard_deck.html#a94fef982f79950a2a43e732390bfc813">addCards</a>(<a class="code hl_class" href="class_deck.html">Deck</a> deckIn) { <span class="comment">// Method to add cards to the discard deck</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">if</span> (!this.deck.isEmpty()) { <span class="comment">// If the deck is not empty</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            this.deck.getLast().under(); <span class="comment">// Set the last card to be under</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 3 &amp;&amp; !deckIn.deck.isEmpty(); i++){ <span class="comment">// Loop to add 3 cards to the discard deck</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <a class="code hl_class" href="class_card.html">Card</a> inCard = deckIn.<a class="code hl_function" href="class_deck.html#a04b3aa67178988caf11ad8288ddc2297">takeCard</a>(); <span class="comment">// Take a card from the deck </span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordflow">if</span> (inCard != <span class="keyword">null</span>) { <span class="comment">// If the card is not null</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                this.deck.add(inCard); <span class="comment">// Add the card to the discard deck</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                this.deck.getLast().show(); <span class="comment">// Show the card</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                this.deck.getLast().under(); <span class="comment">// Set the card to be under</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        this.deck.getLast().over(); <span class="comment">// Set the last card to be over</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_discard_deck.html#a94fef982f79950a2a43e732390bfc813">   17</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_discard_deck.html#a94fef982f79950a2a43e732390bfc813">addCards</a>(<a class="code hl_class" href="class_deck.html">Deck</a> deckIn) { <span class="comment">// Method to add cards to the discard deck</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">if</span> (!this.deck.isEmpty()) { <span class="comment">// If the deck is not empty</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            this.deck.getLast().under(); <span class="comment">// Set the last card to be under</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 3 &amp;&amp; !deckIn.deck.isEmpty(); i++){ <span class="comment">// Loop to add 3 cards to the discard deck</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <a class="code hl_class" href="class_card.html">Card</a> inCard = deckIn.<a class="code hl_function" href="class_deck.html#a04b3aa67178988caf11ad8288ddc2297">takeCard</a>(); <span class="comment">// Take a card from the deck </span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordflow">if</span> (inCard != <span class="keyword">null</span>) { <span class="comment">// If the card is not null</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                this.deck.add(inCard); <span class="comment">// Add the card to the discard deck</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                this.deck.getLast().show(); <span class="comment">// Show the card</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                this.deck.getLast().under(); <span class="comment">// Set the card to be under</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        this.deck.getLast().over(); <span class="comment">// Set the last card to be over</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdef"><b>Definition</b> <a href="_card_8java_source.html#l00002">Card.java:2</a></div></div>
+<div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdef"><b>Definition</b> <a href="_card_8java_source.html#l00005">Card.java:5</a></div></div>
 <div class="ttc" id="aclass_deck_html"><div class="ttname"><a href="class_deck.html">Deck</a></div><div class="ttdef"><b>Definition</b> <a href="_deck_8java_source.html#l00010">Deck.java:10</a></div></div>
 <div class="ttc" id="aclass_deck_html_a04b3aa67178988caf11ad8288ddc2297"><div class="ttname"><a href="class_deck.html#a04b3aa67178988caf11ad8288ddc2297">Deck.takeCard</a></div><div class="ttdeci">Card takeCard()</div><div class="ttdef"><b>Definition</b> <a href="_deck_8java_source.html#l00038">Deck.java:38</a></div></div>
-<div class="ttc" id="aclass_discard_deck_html"><div class="ttname"><a href="class_discard_deck.html">DiscardDeck</a></div><div class="ttdef"><b>Definition</b> <a href="#l00002">DiscardDeck.java:2</a></div></div>
-<div class="ttc" id="aclass_discard_deck_html_a726dc786f614aea7946e334f4ef4758f"><div class="ttname"><a href="class_discard_deck.html#a726dc786f614aea7946e334f4ef4758f">DiscardDeck.DiscardDeck</a></div><div class="ttdeci">DiscardDeck()</div><div class="ttdef"><b>Definition</b> <a href="#l00004">DiscardDeck.java:4</a></div></div>
-<div class="ttc" id="aclass_discard_deck_html_a94fef982f79950a2a43e732390bfc813"><div class="ttname"><a href="class_discard_deck.html#a94fef982f79950a2a43e732390bfc813">DiscardDeck.addCards</a></div><div class="ttdeci">void addCards(Deck deckIn)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">DiscardDeck.java:12</a></div></div>
+<div class="ttc" id="aclass_discard_deck_html"><div class="ttname"><a href="class_discard_deck.html">DiscardDeck</a></div><div class="ttdef"><b>Definition</b> <a href="#l00004">DiscardDeck.java:4</a></div></div>
+<div class="ttc" id="aclass_discard_deck_html_a726dc786f614aea7946e334f4ef4758f"><div class="ttname"><a href="class_discard_deck.html#a726dc786f614aea7946e334f4ef4758f">DiscardDeck.DiscardDeck</a></div><div class="ttdeci">DiscardDeck()</div><div class="ttdef"><b>Definition</b> <a href="#l00009">DiscardDeck.java:9</a></div></div>
+<div class="ttc" id="aclass_discard_deck_html_a94fef982f79950a2a43e732390bfc813"><div class="ttname"><a href="class_discard_deck.html#a94fef982f79950a2a43e732390bfc813">DiscardDeck.addCards</a></div><div class="ttdeci">void addCards(Deck deckIn)</div><div class="ttdef"><b>Definition</b> <a href="#l00017">DiscardDeck.java:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -102,82 +102,82 @@ $(function(){initNavTree('_score_system_8java_source.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 <a href="_score_system_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="foldopen" id="foldopen00002" data-start="{" data-end="};">
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="class_score_system.html">    2</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_score_system.html">ScoreSystem</a> {</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> score; <span class="comment">// Integer to store the score</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keywordtype">long</span> startTime; <span class="comment">// long final to store the start time of the game</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> multipleBuffer;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_score_system.html#aa7264453608813431228aacb7dba9fd8">   10</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_score_system.html#aa7264453608813431228aacb7dba9fd8">ScoreSystem</a>() {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        this.score = 0; <span class="comment">// Set the score to 0</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        this.startTime = System.currentTimeMillis(); <span class="comment">// Set the start time to the current time</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        this.multipleBuffer = 0;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_score_system.html">    6</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_score_system.html">ScoreSystem</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> score; <span class="comment">// Integer to store the score</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keywordtype">long</span> startTime; <span class="comment">// long final to store the start time of the game</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> multipleBuffer;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_score_system.html#aa7264453608813431228aacb7dba9fd8">   14</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_score_system.html#aa7264453608813431228aacb7dba9fd8">ScoreSystem</a>() {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        this.score = 0; <span class="comment">// Set the score to 0</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        this.startTime = System.currentTimeMillis(); <span class="comment">// Set the start time to the current time</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        this.multipleBuffer = 0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_score_system.html#a879605fd0334aba48a8fdc51da58adbb">   19</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_score_system.html#a879605fd0334aba48a8fdc51da58adbb">getScore</a>() {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> score;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_score_system.html#a879605fd0334aba48a8fdc51da58adbb">   24</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_score_system.html#a879605fd0334aba48a8fdc51da58adbb">getScore</a>() {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> score;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_score_system.html#a84a732e363cb1e7f04c9131e4376dace">   27</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_score_system.html#a84a732e363cb1e7f04c9131e4376dace">elapedTime</a>() {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)((System.currentTimeMillis() - startTime) / 1000);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_score_system.html#a84a732e363cb1e7f04c9131e4376dace">   32</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_score_system.html#a84a732e363cb1e7f04c9131e4376dace">elapedTime</a>() {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)((System.currentTimeMillis() - startTime) / 1000);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_score_system.html#a7c86cd64e02318f62b2a3f7895a88d76">   34</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a7c86cd64e02318f62b2a3f7895a88d76">scoreFromDiscard</a>() {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        score += 10;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_score_system.html#a7c86cd64e02318f62b2a3f7895a88d76">   39</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a7c86cd64e02318f62b2a3f7895a88d76">scoreFromDiscard</a>() {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        score += 10;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_score_system.html#ac8f6cefba77d06c0df2e69a2501669d6">   41</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#ac8f6cefba77d06c0df2e69a2501669d6">scoreFromTable</a>() {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        score += 20;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_score_system.html#ac8f6cefba77d06c0df2e69a2501669d6">   46</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#ac8f6cefba77d06c0df2e69a2501669d6">scoreFromTable</a>() {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        score += 20;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_score_system.html#a8faac73db82de357edab3324d20cee37">   48</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a8faac73db82de357edab3324d20cee37">toTableScore</a>() {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        score += 5;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_score_system.html#a8faac73db82de357edab3324d20cee37">   53</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a8faac73db82de357edab3324d20cee37">toTableScore</a>() {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        score += 5;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_score_system.html#a409d00395bdfc6c471838aee202bf7ed">   55</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a409d00395bdfc6c471838aee202bf7ed">setMultipleBuffer</a>(<span class="keywordtype">int</span> multiple) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        multipleBuffer = multiple;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_score_system.html#a22f352998201af5fe16de48b627f38cd">   62</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a22f352998201af5fe16de48b627f38cd">scoreFromTableMultiple</a>() {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        score += 5 * multipleBuffer;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        multipleBuffer = 0;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_score_system.html#a409d00395bdfc6c471838aee202bf7ed">   62</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a409d00395bdfc6c471838aee202bf7ed">setMultipleBuffer</a>(<span class="keywordtype">int</span> multiple) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        multipleBuffer = multiple;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_score_system.html#a889c522c18d30ffd844d6aa51cd6f240">   70</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a889c522c18d30ffd844d6aa51cd6f240">clearMultipleBuffer</a>() {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_score_system.html#a22f352998201af5fe16de48b627f38cd">   69</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a22f352998201af5fe16de48b627f38cd">scoreFromTableMultiple</a>() {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        score += 5 * multipleBuffer;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        multipleBuffer = 0;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
 </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_score_system.html#a889c522c18d30ffd844d6aa51cd6f240">   77</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_score_system.html#a889c522c18d30ffd844d6aa51cd6f240">clearMultipleBuffer</a>() {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        multipleBuffer = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
 </div>
-<div class="ttc" id="aclass_score_system_html"><div class="ttname"><a href="class_score_system.html">ScoreSystem</a></div><div class="ttdef"><b>Definition</b> <a href="#l00002">ScoreSystem.java:2</a></div></div>
-<div class="ttc" id="aclass_score_system_html_a22f352998201af5fe16de48b627f38cd"><div class="ttname"><a href="class_score_system.html#a22f352998201af5fe16de48b627f38cd">ScoreSystem.scoreFromTableMultiple</a></div><div class="ttdeci">void scoreFromTableMultiple()</div><div class="ttdef"><b>Definition</b> <a href="#l00062">ScoreSystem.java:62</a></div></div>
-<div class="ttc" id="aclass_score_system_html_a409d00395bdfc6c471838aee202bf7ed"><div class="ttname"><a href="class_score_system.html#a409d00395bdfc6c471838aee202bf7ed">ScoreSystem.setMultipleBuffer</a></div><div class="ttdeci">void setMultipleBuffer(int multiple)</div><div class="ttdef"><b>Definition</b> <a href="#l00055">ScoreSystem.java:55</a></div></div>
-<div class="ttc" id="aclass_score_system_html_a7c86cd64e02318f62b2a3f7895a88d76"><div class="ttname"><a href="class_score_system.html#a7c86cd64e02318f62b2a3f7895a88d76">ScoreSystem.scoreFromDiscard</a></div><div class="ttdeci">void scoreFromDiscard()</div><div class="ttdef"><b>Definition</b> <a href="#l00034">ScoreSystem.java:34</a></div></div>
-<div class="ttc" id="aclass_score_system_html_a84a732e363cb1e7f04c9131e4376dace"><div class="ttname"><a href="class_score_system.html#a84a732e363cb1e7f04c9131e4376dace">ScoreSystem.elapedTime</a></div><div class="ttdeci">int elapedTime()</div><div class="ttdef"><b>Definition</b> <a href="#l00027">ScoreSystem.java:27</a></div></div>
-<div class="ttc" id="aclass_score_system_html_a879605fd0334aba48a8fdc51da58adbb"><div class="ttname"><a href="class_score_system.html#a879605fd0334aba48a8fdc51da58adbb">ScoreSystem.getScore</a></div><div class="ttdeci">int getScore()</div><div class="ttdef"><b>Definition</b> <a href="#l00019">ScoreSystem.java:19</a></div></div>
-<div class="ttc" id="aclass_score_system_html_a889c522c18d30ffd844d6aa51cd6f240"><div class="ttname"><a href="class_score_system.html#a889c522c18d30ffd844d6aa51cd6f240">ScoreSystem.clearMultipleBuffer</a></div><div class="ttdeci">void clearMultipleBuffer()</div><div class="ttdef"><b>Definition</b> <a href="#l00070">ScoreSystem.java:70</a></div></div>
-<div class="ttc" id="aclass_score_system_html_a8faac73db82de357edab3324d20cee37"><div class="ttname"><a href="class_score_system.html#a8faac73db82de357edab3324d20cee37">ScoreSystem.toTableScore</a></div><div class="ttdeci">void toTableScore()</div><div class="ttdef"><b>Definition</b> <a href="#l00048">ScoreSystem.java:48</a></div></div>
-<div class="ttc" id="aclass_score_system_html_aa7264453608813431228aacb7dba9fd8"><div class="ttname"><a href="class_score_system.html#aa7264453608813431228aacb7dba9fd8">ScoreSystem.ScoreSystem</a></div><div class="ttdeci">ScoreSystem()</div><div class="ttdef"><b>Definition</b> <a href="#l00010">ScoreSystem.java:10</a></div></div>
-<div class="ttc" id="aclass_score_system_html_ac8f6cefba77d06c0df2e69a2501669d6"><div class="ttname"><a href="class_score_system.html#ac8f6cefba77d06c0df2e69a2501669d6">ScoreSystem.scoreFromTable</a></div><div class="ttdeci">void scoreFromTable()</div><div class="ttdef"><b>Definition</b> <a href="#l00041">ScoreSystem.java:41</a></div></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="ttc" id="aclass_score_system_html"><div class="ttname"><a href="class_score_system.html">ScoreSystem</a></div><div class="ttdef"><b>Definition</b> <a href="#l00006">ScoreSystem.java:6</a></div></div>
+<div class="ttc" id="aclass_score_system_html_a22f352998201af5fe16de48b627f38cd"><div class="ttname"><a href="class_score_system.html#a22f352998201af5fe16de48b627f38cd">ScoreSystem.scoreFromTableMultiple</a></div><div class="ttdeci">void scoreFromTableMultiple()</div><div class="ttdef"><b>Definition</b> <a href="#l00069">ScoreSystem.java:69</a></div></div>
+<div class="ttc" id="aclass_score_system_html_a409d00395bdfc6c471838aee202bf7ed"><div class="ttname"><a href="class_score_system.html#a409d00395bdfc6c471838aee202bf7ed">ScoreSystem.setMultipleBuffer</a></div><div class="ttdeci">void setMultipleBuffer(int multiple)</div><div class="ttdef"><b>Definition</b> <a href="#l00062">ScoreSystem.java:62</a></div></div>
+<div class="ttc" id="aclass_score_system_html_a7c86cd64e02318f62b2a3f7895a88d76"><div class="ttname"><a href="class_score_system.html#a7c86cd64e02318f62b2a3f7895a88d76">ScoreSystem.scoreFromDiscard</a></div><div class="ttdeci">void scoreFromDiscard()</div><div class="ttdef"><b>Definition</b> <a href="#l00039">ScoreSystem.java:39</a></div></div>
+<div class="ttc" id="aclass_score_system_html_a84a732e363cb1e7f04c9131e4376dace"><div class="ttname"><a href="class_score_system.html#a84a732e363cb1e7f04c9131e4376dace">ScoreSystem.elapedTime</a></div><div class="ttdeci">int elapedTime()</div><div class="ttdef"><b>Definition</b> <a href="#l00032">ScoreSystem.java:32</a></div></div>
+<div class="ttc" id="aclass_score_system_html_a879605fd0334aba48a8fdc51da58adbb"><div class="ttname"><a href="class_score_system.html#a879605fd0334aba48a8fdc51da58adbb">ScoreSystem.getScore</a></div><div class="ttdeci">int getScore()</div><div class="ttdef"><b>Definition</b> <a href="#l00024">ScoreSystem.java:24</a></div></div>
+<div class="ttc" id="aclass_score_system_html_a889c522c18d30ffd844d6aa51cd6f240"><div class="ttname"><a href="class_score_system.html#a889c522c18d30ffd844d6aa51cd6f240">ScoreSystem.clearMultipleBuffer</a></div><div class="ttdeci">void clearMultipleBuffer()</div><div class="ttdef"><b>Definition</b> <a href="#l00077">ScoreSystem.java:77</a></div></div>
+<div class="ttc" id="aclass_score_system_html_a8faac73db82de357edab3324d20cee37"><div class="ttname"><a href="class_score_system.html#a8faac73db82de357edab3324d20cee37">ScoreSystem.toTableScore</a></div><div class="ttdeci">void toTableScore()</div><div class="ttdef"><b>Definition</b> <a href="#l00053">ScoreSystem.java:53</a></div></div>
+<div class="ttc" id="aclass_score_system_html_aa7264453608813431228aacb7dba9fd8"><div class="ttname"><a href="class_score_system.html#aa7264453608813431228aacb7dba9fd8">ScoreSystem.ScoreSystem</a></div><div class="ttdeci">ScoreSystem()</div><div class="ttdef"><b>Definition</b> <a href="#l00014">ScoreSystem.java:14</a></div></div>
+<div class="ttc" id="aclass_score_system_html_ac8f6cefba77d06c0df2e69a2501669d6"><div class="ttname"><a href="class_score_system.html#ac8f6cefba77d06c0df2e69a2501669d6">ScoreSystem.scoreFromTable</a></div><div class="ttdeci">void scoreFromTable()</div><div class="ttdef"><b>Definition</b> <a href="#l00046">ScoreSystem.java:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

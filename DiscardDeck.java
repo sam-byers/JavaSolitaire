@@ -1,7 +1,12 @@
-/*DiscardDeck class extends Deck and represents the 'draw' pile */
+/**
+ * DiscardDeck class extends Deck and represents the 'draw' pile 
+ */
 public class DiscardDeck extends Deck{
     
-    public DiscardDeck() { // Constructor for DiscardDeck class
+    /**
+     * Constructor for DiscardDeck class
+     */
+    public DiscardDeck() {
         super();
     }
 

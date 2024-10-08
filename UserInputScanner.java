@@ -1,7 +1,9 @@
 
 import java.util.Scanner;
 
-/* User Input Scanner class handles all user inputs into the program */
+/**
+ *  User Input Scanner class handles all user inputs into the program
+ */
 public class UserInputScanner {
 
     /**

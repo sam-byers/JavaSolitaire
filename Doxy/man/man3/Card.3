@@ -42,7 +42,9 @@ Card
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB2\fP of file \fBCard\&.java\fP\&.
+\fBCard\fP class which represents a given card, this is never extended on but is stored in array lists in each deck class and is used to represent a card in the game of solitaire\&. 
+.PP
+Definition at line \fB5\fP of file \fBCard\&.java\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Card\&.Card (String rank, String suit)"
@@ -58,45 +60,87 @@ Constructor for the \fBCard\fP class\&.
 .PP
 
 .PP
-Definition at line \fB15\fP of file \fBCard\&.java\fP\&.
+Definition at line \fB18\fP of file \fBCard\&.java\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "int Card\&.getNumValue ()"
+Getter for the numerical value of the card\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The numerical value of the card\&. 
+.RE
+.PP
 
 .PP
-Definition at line \fB48\fP of file \fBCard\&.java\fP\&.
+Definition at line \fB60\fP of file \fBCard\&.java\fP\&.
 .SS "String Card\&.getRank ()"
+Getter for the rank of the card\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The rank of the card\&. 
+.RE
+.PP
 
 .PP
-Definition at line \fB40\fP of file \fBCard\&.java\fP\&.
+Definition at line \fB46\fP of file \fBCard\&.java\fP\&.
 .SS "String Card\&.getSuit ()"
+Getter for the suit of the card\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The suit of the card\&. 
+.RE
+.PP
 
 .PP
-Definition at line \fB44\fP of file \fBCard\&.java\fP\&.
+Definition at line \fB53\fP of file \fBCard\&.java\fP\&.
 .SS "void Card\&.hide ()"
-
+Setter for the isShown boolean\&. This only sets false for code readability\&. This is used to set the card to be not shown, which determines how it is rendered as well as game logic for what card can be moved\&. 
 .PP
-Definition at line \fB65\fP of file \fBCard\&.java\fP\&.
+Definition at line \fB95\fP of file \fBCard\&.java\fP\&.
 .SS "Boolean Card\&.isShown ()"
-
+Getter for the isShown boolean\&. This is used to check if the card is shown or not, which determines how it is rendered as well as game logic for what card can be moved\&. 
 .PP
-Definition at line \fB52\fP of file \fBCard\&.java\fP\&.
-.SS "Boolean Card\&.isUnder ()"
-
+\fBReturns\fP
+.RS 4
+The isShown boolean\&. 
+.RE
 .PP
-Definition at line \fB56\fP of file \fBCard\&.java\fP\&.
-.SS "void Card\&.over ()"
 
 .PP
 Definition at line \fB69\fP of file \fBCard\&.java\fP\&.
+.SS "Boolean Card\&.isUnder ()"
+Getter for the isUnder boolean\&. This is used to check if the card is under another card or not, which determines how it is rendered\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The isUnder boolean\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBCard\&.java\fP\&.
+.SS "void Card\&.over ()"
+Setter for the isUnder boolean\&. This only sets false for code readability\&. This is used to set the card to be over another\&. 
+.PP
+Definition at line \fB102\fP of file \fBCard\&.java\fP\&.
 .SS "void Card\&.show ()"
+Setter for the isShown boolean\&. This only sets true for code readability\&. This is used to set the card to be shown, which determines how it is rendered as well as game logic for what card can be moved\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIisShown\fP The boolean to set isShown to\&. 
+.RE
+.PP
 
 .PP
-Definition at line \fB61\fP of file \fBCard\&.java\fP\&.
+Definition at line \fB87\fP of file \fBCard\&.java\fP\&.
 .SS "void Card\&.under ()"
-
+Setter for the isUnder boolean\&. This only sets true for code readability\&. This is used to set the card to be under another\&. 
 .PP
-Definition at line \fB73\fP of file \fBCard\&.java\fP\&.
+Definition at line \fB109\fP of file \fBCard\&.java\fP\&.
 
 .SH "Author"
 .PP 

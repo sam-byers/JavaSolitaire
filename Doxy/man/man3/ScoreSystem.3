@@ -39,19 +39,21 @@ ScoreSystem
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line \fB2\fP of file \fBScoreSystem\&.java\fP\&.
+The scoresystem class is used to keep track of the score of the game\&. It also keeps track of the time elapsed since the start of the game\&. The score is updated based on the moves made by the player\&. 
+.PP
+Definition at line \fB6\fP of file \fBScoreSystem\&.java\fP\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "ScoreSystem\&.ScoreSystem ()"
 Constructor for the \fBScoreSystem\fP class\&. 
 .PP
-Definition at line \fB10\fP of file \fBScoreSystem\&.java\fP\&.
+Definition at line \fB14\fP of file \fBScoreSystem\&.java\fP\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void ScoreSystem\&.clearMultipleBuffer ()"
 Method to clear the multiple buffer if the move is not sucessful\&. 
 .PP
-Definition at line \fB70\fP of file \fBScoreSystem\&.java\fP\&.
+Definition at line \fB77\fP of file \fBScoreSystem\&.java\fP\&.
 .SS "int ScoreSystem\&.elapedTime ()"
 Method to return the elapsed time since the start of the game\&. 
 .PP
@@ -62,31 +64,46 @@ The elapsed time in seconds\&.
 .PP
 
 .PP
-Definition at line \fB27\fP of file \fBScoreSystem\&.java\fP\&.
+Definition at line \fB32\fP of file \fBScoreSystem\&.java\fP\&.
 .SS "int ScoreSystem\&.getScore ()"
 Getter to return the score\&. 
 .PP
-Definition at line \fB19\fP of file \fBScoreSystem\&.java\fP\&.
+\fBReturns\fP
+.RS 4
+The score as an integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB24\fP of file \fBScoreSystem\&.java\fP\&.
 .SS "void ScoreSystem\&.scoreFromDiscard ()"
 Method to update the score when a card is moved from the discard pile to the build pile\&. 
 .PP
-Definition at line \fB34\fP of file \fBScoreSystem\&.java\fP\&.
+Definition at line \fB39\fP of file \fBScoreSystem\&.java\fP\&.
 .SS "void ScoreSystem\&.scoreFromTable ()"
 Method to update the score when a card is moved from the table to the build pile\&. 
 .PP
-Definition at line \fB41\fP of file \fBScoreSystem\&.java\fP\&.
+Definition at line \fB46\fP of file \fBScoreSystem\&.java\fP\&.
 .SS "void ScoreSystem\&.scoreFromTableMultiple ()"
 Method to update the score when multiple cards are moved from the table to table\&. 
 .PP
-Definition at line \fB62\fP of file \fBScoreSystem\&.java\fP\&.
+Definition at line \fB69\fP of file \fBScoreSystem\&.java\fP\&.
 .SS "void ScoreSystem\&.setMultipleBuffer (int multiple)"
-Method to set the number of cards being moved, which can be used to update the score if sucessful\&. 
+Method to set the number of cards being moved, which can be used to update the score if sucessful\&.
+
 .PP
-Definition at line \fB55\fP of file \fBScoreSystem\&.java\fP\&.
+\fBParameters\fP
+.RS 4
+\fImultiple\fP The number of cards being moved\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB62\fP of file \fBScoreSystem\&.java\fP\&.
 .SS "void ScoreSystem\&.toTableScore ()"
 Method to update the score when a card is moved from table pile to table pile, or from discard pile to table pile\&. 
 .PP
-Definition at line \fB48\fP of file \fBScoreSystem\&.java\fP\&.
+Definition at line \fB53\fP of file \fBScoreSystem\&.java\fP\&.
 
 .SH "Author"
 .PP 

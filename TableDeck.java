@@ -1,10 +1,15 @@
-/* Table Deck class extends Deck and represents one of the 7 piles of cards on the playtable */
+/**
+ *  Table Deck class extends Deck and represents one of the 7 piles of cards on the playtable
+ */
 public class TableDeck extends Deck {
 
     boolean hasStack = false; // Boolean to check if the deck has a stack of cards
 
 
-    public TableDeck() { // Constructor for TableDeck class
+    /**
+     * Constructor for TableDeck class
+     */
+    public TableDeck() {
         super();
     }
 

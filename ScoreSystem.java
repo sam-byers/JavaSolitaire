@@ -1,4 +1,8 @@
-
+/**
+ * The scoresystem class is used to keep track of the score of the game.
+ * It also keeps track of the time elapsed since the start of the game.
+ * The score is updated based on the moves made by the player.
+ */
 public class ScoreSystem {
     private int score; // Integer to store the score
     private final long startTime; // long final to store the start time of the game
@@ -15,6 +19,7 @@ public class ScoreSystem {
 
     /**
      * Getter to return the score.
+     * @return The score as an integer.
      */
     public int getScore() {
         return score;
@@ -51,6 +56,8 @@ public class ScoreSystem {
 
     /**
      * Method to set the number of cards being moved, which can be used to update the score if sucessful.
+     * 
+     * @param multiple The number of cards being moved.
      */
     public void setMultipleBuffer(int multiple) {
         multipleBuffer = multiple;

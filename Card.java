@@ -1,4 +1,7 @@
-/*Card class which represents a given card, this is never extended on but is stored in array lists in each deck class*/
+/**
+ * Card class which represents a given card, this is never extended on but is stored in array lists in each deck class
+ * and is used to represent a card in the game of solitaire.
+ * */
 public class Card {
     private final String rank; // String to store the rank of the card, FINAL because it should not be changed
     private final String suit; // String to store the suit of the card, FINAL because it should not be changed
@@ -36,40 +39,73 @@ public class Card {
     }
 
 
-    // Getters for the Card class
+    /**
+     * Getter for the rank of the card.
+     * @return The rank of the card.
+     */
     public String getRank() {
         return rank;
     }
-
+    /**
+     * Getter for the suit of the card.
+     * @return The suit of the card.
+     */
     public String getSuit() {
         return suit;
     }
-
+    /**
+     * Getter for the numerical value of the card.
+     * @return The numerical value of the card.
+     */
     public int getNumValue() {
         return numValue;
     }
 
+    /**
+     * Getter for the isShown boolean. This is used to check if the card is shown or not, 
+     * which determines how it is rendered as well as game logic for what card can be moved.
+     * @return The isShown boolean.
+     */
     public Boolean isShown() {
         return isShown;
     }
 
+    /**
+     * Getter for the isUnder boolean. This is used to check if the card is under another card or not, 
+     * which determines how it is rendered.
+     * @return The isUnder boolean.
+     */
     public Boolean isUnder() {
         return isUnder;
     }
 
-    // Setters for the Card class
+    /**
+     * Setter for the isShown boolean. This only sets true for code readability. This is used to set the card to be shown, 
+     * which determines how it is rendered as well as game logic for what card can be moved.
+     * @param isShown The boolean to set isShown to.
+     */
     public void show() {
         isShown = true;
     }
 
+    /**
+     * Setter for the isShown boolean. This only sets false for code readability. This is used to set the card to be not shown,
+     * which determines how it is rendered as well as game logic for what card can be moved.
+     */
     public void hide() {
         isShown = false;
     } 
     
+    /**
+     * Setter for the isUnder boolean. This only sets false for code readability. This is used to set the card to be over another.
+     */
     public void over() {
         isUnder = false;
     }
     
+    /**
+     * Setter for the isUnder boolean. This only sets true for code readability. This is used to set the card to be under another.
+     */
     public void under() {
         isUnder = true;
     }
