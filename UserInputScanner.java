@@ -85,18 +85,23 @@ public class UserInputScanner {
             }
         }
         if (scanner.hasNextLine()) { // If there is user input
-            int userInput = scanner.nextInt(); // Get the user input as an integer
-            if (!(userInput < deck.deck.size())) { // If the user input is greater than the size of the deck
+            try {
+                int userInput = Integer.parseInt(scanner.nextLine()); // Get the user input as an integer
+                if (!(userInput < deck.deck.size())) { // If the user input is greater than the size of the deck
+                    System.out.println("Invalid Index."); // Print an error message
+                    return -1;
+                }
+                if (!deck.deck.get(userInput).isShown()) { // If the card at the user input index is not shown
+                    System.out.println("Invalid Index."); // Print an error message
+                    return -1;
+                }
+                // otherwise, print the card's rank and suit
+                System.out.println("You chose: " + deck.deck.get(userInput).getRank() + " of " + deck.deck.get(userInput).getSuit());
+                return userInput; // Return the user input
+            } catch (NumberFormatException e) { // If the user input is not a number
                 System.out.println("Invalid Index."); // Print an error message
                 return -1;
             }
-            if (!deck.deck.get(userInput).isShown()) { // If the card at the user input index is not shown
-                System.out.println("Invalid Index."); // Print an error message
-                return -1;
-            }
-            // otherwise, print the card's rank and suit
-            System.out.println("You chose: " + deck.deck.get(userInput).getRank() + " of " + deck.deck.get(userInput).getSuit()); 
-            return userInput; // Return the user input
         } else {
             System.out.println("No input available."); // If there is no user input, print an error message
             return -1;
